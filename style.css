@@ -60,15 +60,15 @@
   right: 0;
   bottom: 5%;
   margin: 0 auto;
-  width: max(110px, 17%);
+  width: max(100px, 15%);
   display: flex;
   justify-content: space-between;
 }
 
 .navigation-dots li {
-  width: 10px;
-  height: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.7);
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   cursor: pointer;
 }
