@@ -2,7 +2,6 @@ const carouselSlide = document.querySelector('.carousel-slide');
 const carouselImages = document.querySelectorAll('.carousel-slide img');
 const prevBtn = document.querySelector('.carousel-prev');
 const nextBtn = document.querySelector('.carousel-next');
-// const dotNodes = document.querySelectorAll('.carousel-dots li');
 const navDots = Array.from(document.querySelectorAll('.carousel-dots li'));
 
 let imageCounter = 1;
@@ -73,20 +72,29 @@ function addNavDotListeners() {
   });
 }
 
-function addTransitionListener() {
+function addTransitionListener(timeoutID) {
   carouselSlide.addEventListener('transitionend', () => {
     makeLoop();
     highlightCurrentDot();
+    clearTimeout(timeoutID);
+    timeoutID = setTimeout(slideForward, 5000); // FIX THIS
   });
 }
+
+// function autoAdvance(timeoutID) {
+//   // FIX THIS
+//   clearTimeout(timeoutID);
+//   timeoutID = setTimeout(slideForward, 5000);
+// }
 
 function buildCarousel() {
   initializeCarousel();
   initializeNavDots();
   addNavDotListeners();
   addBtnListeners();
-  addTransitionListener();
   makeLoop();
+  let autoAdvance = setTimeout(slideForward, 5000); // FIX THIS
+  addTransitionListener(autoAdvance); // FIX THIS
 }
 
 buildCarousel();
