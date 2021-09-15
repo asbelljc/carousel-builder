@@ -33,7 +33,7 @@
   object-fit: cover;
 }
 
-.prev-btn {
+.carousel-prev {
   position: absolute;
   top: 50%;
   left: 30px;
@@ -44,7 +44,7 @@
   cursor: pointer;
 }
 
-.next-btn {
+.carousel-next {
   position: absolute;
   top: 50%;
   right: 30px;
@@ -55,7 +55,7 @@
   cursor: pointer;
 }
 
-.navigation-dots {
+.carousel-dots {
   list-style: none;
   position: absolute;
   left: 0;
@@ -67,11 +67,15 @@
   justify-content: space-between;
 }
 
-.navigation-dots li {
+.carousel-dots li {
   width: 8px;
   height: 8px;
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-dots .active-dot {
+  background-color: rgba(255, 255, 255, 0.8);
 }
