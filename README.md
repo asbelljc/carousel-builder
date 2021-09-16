@@ -32,8 +32,6 @@ npm install carousel-builder
     <li></li>
     <li></li>
     <li></li>
-    <li></li>
-    <li></li>
   </ol>
 </div>
 ```
