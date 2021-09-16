@@ -1,8 +1,8 @@
+const carouselFrame = document.querySelector('.carousel-frame');
 const carouselSlide = document.querySelector('.carousel-slide');
 const carouselImages = document.querySelectorAll('.carousel-slide img');
 const prevBtn = document.querySelector('.carousel-prev');
 const nextBtn = document.querySelector('.carousel-next');
-// const dotNodes = document.querySelectorAll('.carousel-dots li');
 const navDots = Array.from(document.querySelectorAll('.carousel-dots li'));
 
 let imageCounter = 1;
@@ -80,13 +80,23 @@ function addTransitionListener() {
   });
 }
 
+function autoAdvance() {
+  let play = setInterval(slideForward, 5000);
+  carouselFrame.addEventListener('mouseover', () => {
+    clearInterval(play); // pause when mouse enters carousel
+  });
+  carouselFrame.addEventListener('mouseout', () => {
+    play = setInterval(slideForward, 5000); // resume when mouse leaves carousel
+  });
+}
+
 function buildCarousel() {
   initializeCarousel();
   initializeNavDots();
   addNavDotListeners();
   addBtnListeners();
   addTransitionListener();
-  makeLoop();
+  autoAdvance();
 }
 
 module.exports = buildCarousel;
