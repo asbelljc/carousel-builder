@@ -61,4 +61,4 @@ Note that buttons and dots are inside the frame in this example, but they are no
 
 ## sample
 
-[live demo](http://asbelljc.github.io/image-carousel)
+[live demo](http://asbelljc.github.io/carousel-builder)
