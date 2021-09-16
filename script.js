@@ -1,10 +1,10 @@
+const carouselFrame = document.querySelector('.carousel-frame');
 const carouselSlide = document.querySelector('.carousel-slide');
 const carouselImages = document.querySelectorAll('.carousel-slide img');
 const prevBtn = document.querySelector('.carousel-prev');
 const nextBtn = document.querySelector('.carousel-next');
 const navDots = Array.from(document.querySelectorAll('.carousel-dots li'));
 
-let autoAdvance;
 let imageCounter = 1;
 
 function initializeNavDots() {
@@ -77,19 +77,18 @@ function addTransitionListener() {
   carouselSlide.addEventListener('transitionend', () => {
     makeLoop();
     highlightCurrentDot();
-    clearTimeout(autoAdvance);
-    autoAdvance = setTimeout(slideForward, 5000);
   });
 }
 
-function addPauseOnHover() {
-  carouselSlide.addEventListener('mouseover', () => {
+function autoAdvance() {
+  let play = setInterval(slideForward, 5000);
+  carouselFrame.addEventListener('mouseover', () => {
     console.log('hey');
-    clearTimeout(autoAdvance);
+    clearInterval(play);
   });
-  carouselSlide.addEventListener('mouseout', () => {
+  carouselFrame.addEventListener('mouseout', () => {
     console.log('hi');
-    autoAdvance = setTimeout(slideForward, 5000);
+    play = setInterval(slideForward, 5000);
   });
 }
 
@@ -98,9 +97,8 @@ function buildCarousel() {
   initializeNavDots();
   addNavDotListeners();
   addBtnListeners();
-  autoAdvance = setTimeout(slideForward, 5000);
+  autoAdvance();
   addTransitionListener();
-  addPauseOnHover();
 }
 
 buildCarousel();
