@@ -83,12 +83,10 @@ function addTransitionListener() {
 function autoAdvance() {
   let play = setInterval(slideForward, 5000);
   carouselFrame.addEventListener('mouseover', () => {
-    console.log('hey');
-    clearInterval(play);
+    clearInterval(play); // pause when mouse enters carousel
   });
   carouselFrame.addEventListener('mouseout', () => {
-    console.log('hi');
-    play = setInterval(slideForward, 5000);
+    play = setInterval(slideForward, 5000); // resume when mouse leaves carousel
   });
 }
 
@@ -97,8 +95,8 @@ function buildCarousel() {
   initializeNavDots();
   addNavDotListeners();
   addBtnListeners();
-  autoAdvance();
   addTransitionListener();
+  autoAdvance();
 }
 
 buildCarousel();
