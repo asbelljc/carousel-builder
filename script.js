@@ -1,11 +1,30 @@
 const carouselFrame = document.querySelector('.carousel-frame');
 const carouselSlide = document.querySelector('.carousel-slide');
-const carouselImages = document.querySelectorAll('.carousel-slide img');
+const carouselImages = getImagesPlusClones();
 const prevBtn = document.querySelector('.carousel-prev');
 const nextBtn = document.querySelector('.carousel-next');
 const navDots = Array.from(document.querySelectorAll('.carousel-dots li'));
 
 let imageCounter = 1;
+
+function getImagesPlusClones() {
+  let images = document.querySelectorAll('.carousel-slide img');
+
+  const firstClone = images[0].cloneNode();
+  const lastClone = images[images.length - 1].cloneNode();
+
+  firstClone.className = 'first-clone';
+  lastClone.className = 'last-clone';
+
+  // we need clones to make an infinite loop effect
+  carouselSlide.append(firstClone);
+  carouselSlide.prepend(lastClone);
+
+  // must reassign images to include the newly cloned images
+  images = document.querySelectorAll('.carousel-slide img');
+
+  return images;
+}
 
 function initializeNavDots() {
   if (navDots.length) navDots[0].classList.add('active-dot');
