@@ -1,0 +1,42 @@
+{
+  "name": "carousel-builder",
+  "version": "1.0.0",
+  "description": "Turn a series of images into a carousel with only a few DOM requirements! Features 5-second auto-advance in addition to controls. Style to your liking.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asbelljc/image-carousel.git"
+  },
+  "keywords": [
+    "image",
+    "images",
+    "carousel",
+    "slider",
+    "image-carousel",
+    "image-slider",
+    "maker",
+    "builder",
+    "carousel-maker",
+    "carousel-builder",
+    "autoplay",
+    "auto-play",
+    "auto",
+    "play",
+    "auto-advance",
+    "advance",
+    "navigation",
+    "dots",
+    "navigation-dots",
+    "nav",
+    "nav-dots"
+  ],
+  "author": "Jonathan Asbell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asbelljc/image-carousel/issues"
+  },
+  "homepage": "https://github.com/asbelljc/image-carousel#readme"
+}

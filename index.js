@@ -82,11 +82,21 @@ function addTransitionListener() {
 
 function autoAdvance() {
   let play = setInterval(slideForward, 5000);
+
   carouselFrame.addEventListener('mouseover', () => {
     clearInterval(play); // pause when mouse enters carousel
   });
+
   carouselFrame.addEventListener('mouseout', () => {
     play = setInterval(slideForward, 5000); // resume when mouse leaves carousel
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      clearInterval(play); // pause when user leaves page
+    } else {
+      play = setInterval(slideForward, 5000); // resume when user returns to page
+    }
   });
 }
 
