@@ -52,7 +52,7 @@ Note that buttons and dots are inside the frame in this example, but they are no
 }
 
 .carousel-slide img {
-  width: 100%;
+  min-width: 100%;
   object-fit: cover;
 }
 ```
