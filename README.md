@@ -2,6 +2,9 @@
 
 Turn a series of images into a carousel with only a few DOM requirements! Features 5-second auto-advance in addition to controls. Style to your liking.
 
+**NEW IN v1.0.2:**
+Make as many carousels as you like! Just follow the same structure described below: .carousel-frame > .carousel-slide > images.
+
 ## install
 
 Install with npm:
@@ -35,8 +38,6 @@ npm install carousel-builder
   </ol>
 </div>
 ```
-
-Note that buttons and dots are inside the frame in this example, but they are not required to be.
 
 - _Required_ CSS styles (add to these as you like):
 
